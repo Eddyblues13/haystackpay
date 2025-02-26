@@ -282,26 +282,7 @@ class AdminController extends Controller
 
 
 
-    public function creditUserPage($id)
-    {
-        $user = User::find($id);
 
-        $data['user'] = $user;
-
-        // Sum of successful account balance
-        $data['balance_sum'] = AccountBalance::where('user_id',  $user->id)
-            ->sum('amount');
-
-        // Sum of successful account balance
-        $data['profit_sum'] = Profit::where('user_id', $user)
-            ->sum('amount');
-
-        if (!$user) {
-            abort(404, 'User not found');
-        }
-
-        return view('admin.credit_user', $data);
-    }
 
     /**
      * Open a new account.
