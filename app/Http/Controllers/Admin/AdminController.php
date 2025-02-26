@@ -249,28 +249,28 @@ class AdminController extends Controller
 
         $data['currentMonth'] = Carbon::now()->format('M Y'); // Example: "Feb 2025"
 
-$data['totalSavingsCredit'] = SavingsBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
-    ->whereYear('created_at', Carbon::now()->year)
-    ->where('type', 'credit')
-    ->sum('amount');
+        $data['totalSavingsCredit'] = SavingsBalance::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'credit')
+            ->sum('amount');
 
-$data['totalSavingsDebit'] = SavingsBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
-    ->whereYear('created_at', Carbon::now()->year)
-    ->where('type', 'debit')
-    ->sum('amount');
+        $data['totalSavingsDebit'] = SavingsBalance::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'debit')
+            ->sum('amount');
 
-$data['totalCheckingCredit'] = CheckingBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
+        $data['totalCheckingCredit'] = CheckingBalance::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'credit')
             ->sum('amount');
 
 
 
-$data['totalCheckingDebit'] = CheckingBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
+        $data['totalCheckingDebit'] = CheckingBalance::where('user_id', $id)
+            ->whereMonth('created_at', Carbon::now()->month)
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'debit')
             ->sum('amount');
@@ -657,28 +657,28 @@ $data['totalCheckingDebit'] = CheckingBalance::where('user_id', $user->id)
 
         $data['currentMonth'] = Carbon::now()->format('M Y'); // Example: "Feb 2025"
 
-$data['totalSavingsCredit'] = SavingsBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
-    ->whereYear('created_at', Carbon::now()->year)
-    ->where('type', 'credit')
-    ->sum('amount');
+        $data['totalSavingsCredit'] = SavingsBalance::where('user_id', $user->id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'credit')
+            ->sum('amount');
 
-$data['totalSavingsDebit'] = SavingsBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
-    ->whereYear('created_at', Carbon::now()->year)
-    ->where('type', 'debit')
-    ->sum('amount');
+        $data['totalSavingsDebit'] = SavingsBalance::where('user_id', $user->id)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->where('type', 'debit')
+            ->sum('amount');
 
-$data['totalCheckingCredit'] = CheckingBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
+        $data['totalCheckingCredit'] = CheckingBalance::where('user_id', $user->id)
+            ->whereMonth('created_at', Carbon::now()->month)
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'credit')
             ->sum('amount');
 
 
 
-$data['totalCheckingDebit'] = CheckingBalance::where('user_id', $user->id)
-    ->whereMonth('created_at', Carbon::now()->month)
+        $data['totalCheckingDebit'] = CheckingBalance::where('user_id', $user->id)
+            ->whereMonth('created_at', Carbon::now()->month)
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'debit')
             ->sum('amount');
